@@ -13,6 +13,6 @@ export class DiriverError extends Error {
 }
 
 export interface Ref {
-	// construct<T>(constructor: Constructor<T>): T;
-	resolve<T>(provider: Provider<T>): Promise<T> | T;
+	resolve<T>(constructor: Initializer<T>): Promise<T>;
+	resolve<T>(constructor: Constructor<T>): T;
 }
